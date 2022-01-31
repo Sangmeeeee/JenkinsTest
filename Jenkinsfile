@@ -229,7 +229,7 @@ pipeline{
                 agent any
 
                 steps{
-                    sh 'docker build . -t server .'
+                    sh 'docker build . -t server'
                 }
             }
         }
