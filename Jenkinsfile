@@ -179,7 +179,7 @@ pipeline{
         }
 
         stages{
-            stage('first starge'){
+            stage('first stage'){
                 agent any
 
                 steps {
@@ -187,7 +187,7 @@ pipeline{
 
                     git url: 'https://github.com/Sangmeeeee/JenkinsTest',
                         branch: 'main',
-                        credentialsId: 'Jenkins for GitHub'
+                        credentialsId: 'jenkins for GitHub'
                 }
                 post{
                     success{
@@ -206,9 +206,24 @@ pipeline{
                     }
                 }
             }
-//              stage('second starge'){
-//             }
-//              stage('third starge'){
-//             }
+             stage('second stage'){
+                agent {
+                    docker { // 이 agent는 Docker로 일하는데 Node 최신버전으로 일한다. 원래는 Ecr에서 끌어오는듯
+                        image 'node:latest'
+                    }
+                }
+
+                steps{
+                    echo 'npm install && npm run'
+                    sh 'node --version'
+                    sh 'npm install && npm run'
+                }
+
+                post{
+                    success{
+                        echo 'second stage success'
+                    }
+                }
+            }
         }
 }
