@@ -226,7 +226,11 @@ pipeline{
             }
 
             stage('Build'){
-                agent any
+                agent{
+                    docker{
+                        image 'node:latest'
+                    }
+                }
 
                 steps{
                     sh 'docker build . -t server'
