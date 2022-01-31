@@ -209,7 +209,7 @@ pipeline{
              stage('second stage'){
                 agent {
                     docker { // 이 agent는 Docker로 일하는데 Node 최신버전으로 일한다. 원래는 Ecr에서 끌어오는듯
-                        image 'node:latest'
+                        image 'node:16.6.1'
                     }
                 }
 
