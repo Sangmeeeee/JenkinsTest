@@ -61,18 +61,18 @@ pipeline { // pipe line의 시작
               success {
                   echo 'Successfully Cloned Repository'
 
-                  mail  to: 'sangmin971223@gmail.com',
-                        subject: "Deploy Frontend Success",
-                        body: "Successfully deployed frontend!"
+//                   mail  to: 'sangmin971223@gmail.com',
+//                         subject: "Deploy Frontend Success",
+//                         body: "Successfully deployed frontend!"
 
               }
 
               failure {
                   echo 'I failed :('
 
-                  mail  to: 'sangmin971223@gmail.com',
-                        subject: "Failed Pipelinee",
-                        body: "Something is wrong with deploy frontend"
+//                   mail  to: 'sangmin971223@gmail.com',
+//                         subject: "Failed Pipelinee",
+//                         body: "Something is wrong with deploy frontend"
               }
           }
         }
@@ -147,10 +147,10 @@ pipeline { // pipe line의 시작
 
           post {
             success {
-              mail  to: 'sangmin971223@gmail.com',
-                    subject: "Deploy Success",
-                    body: "Successfully deployed!"
-                  
+//               mail  to: 'sangmin971223@gmail.com',
+//                     subject: "Deploy Success",
+//                     body: "Successfully deployed!"
+//
             }
           }
         }
