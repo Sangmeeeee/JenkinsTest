@@ -120,9 +120,15 @@ pipeline { // pipe line의 시작
 
             dir ('./server'){ // docker를 만들어서 배포
                 sh """
-                docker build . -t server --build-arg env=${PROD}
+                docker build . -t server
                 """
             }
+
+//                         dir ('./server'){ // docker를 만들어서 배포
+//                             sh """
+//                             docker build . -t server --build-arg env=${PROD}
+//                             """
+//                         }
           }
 
           post {
