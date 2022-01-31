@@ -166,7 +166,6 @@
 
 pipeline{
     agent any // 아무거나 사용해라
-
         triggers { // 몇분 주기로 trigger 될것인지? > git을 3분 주기로
             pollSCM('*/3 * * * *')
         }
@@ -206,7 +205,7 @@ pipeline{
                     }
                 }
             }
-             stage('second stage'){
+             stage('second stage for test'){
                 agent {
                     docker { // 이 agent는 Docker로 일하는데 Node 최신버전으로 일한다. 원래는 Ecr에서 끌어오는듯
                         image 'node:latest'
@@ -223,6 +222,14 @@ pipeline{
                     success{
                         echo 'second stage success'
                     }
+                }
+            }
+
+            stage('Build'){
+                agent any
+
+                steps{
+                    sh 'docker build . -t server .'
                 }
             }
         }
