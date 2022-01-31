@@ -1,5 +1,5 @@
 FROM node:15
-WORKDIR /usr/src/app
+WORKDIR .
 RUN npm install
 COPY . .
 EXPOSE 80
