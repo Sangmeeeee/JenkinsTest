@@ -147,6 +147,7 @@ pipeline { // pipe line의 시작
 
           post {
             success {
+                echo 'Deploy Success'
 //               mail  to: 'sangmin971223@gmail.com',
 //                     subject: "Deploy Success",
 //                     body: "Successfully deployed!"
