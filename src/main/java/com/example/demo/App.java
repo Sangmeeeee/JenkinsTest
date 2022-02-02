@@ -16,7 +16,7 @@ public class App {
 
 	@RequestMapping("/")
     public String home() {
-        return "Hello world2.";
+        return "Hello world3.";
     }
 
     public static void main(String[] args) {
